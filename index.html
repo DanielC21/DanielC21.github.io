@@ -1,28 +1,61 @@
 <html>
     <head>
         <title>AR.js Basic Projected Camera Example</title>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">.
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <!-- Look-at component. We don't need this now, but we will later. -->
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script type='text/javascript' src='MazeMapWithRouteEdit.js'></script>
-    </head>
-    <body>
       
-    <!-- style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'-->
- 
+      <style>    
+        
+        .buttons {
+          position: fixed;  
+          display: inline-block;
+          top: 10px;  
+          width:100%;     
+          z-index: 1;    
+        }
+
+        .button{
+          display: block;
+          border-radius: 6px;  
+          background-color: white;
+          padding: 18px 44px;
+          margin: 15px;
+        }
+
+        #showHide {
+          padding: 10px 12px;  
+          margin-left: 0;
+          min-width: 44px;
+          font-size: 20px;
+        }
+
+
+        #routeBtns {
+          display: none;
+        }
+      
+      </style>
+    </head>
+  
+    <body>
+
     <div class="buttons">
-	  	<button id = "routeOneButton" class="button">Route 1</button>    
-	  	<button id = "routeTwoButton" class="button">Route 2</button>
-	  	<button id = "routeThreeButton" class="button">Route 3</button>
+      <button onclick="toggleRoutes()" id = "showHide" class="button">></button>   
+      <div id="routeBtns">
+        <button onclick="setRouteOne()" id = "routeOneButton" class="button">Route 1</button>    
+	  	  <button onclick="setRouteTwo()" id = "routeTwoButton" class="button">Route 2</button>
+	  	  <button onclick="setRouteThree()" id = "routeThreeButton" class="button">Route 3</button>
+      </div>
   	</div>
       
       
     <a-scene
         vr-mode-ui="enabled: false"
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
-        renderer='antialias: true; alpha: true'>T
+        renderer='antialias: true; alpha: true'>
             <a-camera gps-projected-camera rotation-reader></a-camera>
             <a-box gps-projected-entity-place='latitude: your-lat; longitude: your-lon' material='color: red' scale='10 10 10'></a-box>
             <a-entity peakfinder></a-entity>
@@ -31,6 +64,44 @@
             
     </body>
 </html>
+
+
+
+<script>
+    
+function toggleRoutes() {
+  var btns = document.getElementById("routeBtns");    
+
+  if (btns.style.display !== "block") {
+    btns.style.display = "block";     
+    document.getElementById("showHide").innerHTML = "-";
+  } else {
+    btns.style.display = "none";        
+    document.getElementById("showHide").innerHTML = ">";
+  }
+}
+
+  
+function setRouteOne(){
+  
+  
+}
+  
+function setRouteTwo(){
+  
+  
+}
+  
+function setRouteThree(){
+  
+  
+}
+  
+  
+</script>
+
+
+
 <!--<html>
 <!DOCTYPE html>
 <head>
