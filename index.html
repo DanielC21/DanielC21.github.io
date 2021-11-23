@@ -23,11 +23,13 @@
           background-color: white;
           padding: 18px 44px;
           margin: 15px;
+          font-weight: bold;
         }
 
         #showHide {
           padding: 10px 12px;  
           margin-left: 0;
+          margin-top: 0;
           min-width: 44px;
           font-size: 20px;
         }
@@ -35,6 +37,7 @@
 
         #routeBtns {
           display: none;
+
         }
       
       </style>
@@ -43,11 +46,11 @@
     <body>
 
     <div class="buttons">
-      <button onclick="toggleRoutes()" id = "showHide" class="button">></button>   
+      <button onclick="toggleRoutesMenu()" id = "showHide" class="button">></button>   
       <div id="routeBtns">
-        <button onclick="setRouteOne()" id = "routeOneButton" class="button">Route 1</button>    
-	  	  <button onclick="setRouteTwo()" id = "routeTwoButton" class="button">Route 2</button>
-	  	  <button onclick="setRouteThree()" id = "routeThreeButton" class="button">Route 3</button>
+        <button onclick="setRoute(1)" id = "routeOneButton" class="button">Route 1</button>    
+	  	  <button onclick="setRoute(2)" id = "routeTwoButton" class="button">Route 2</button>
+	  	  <button onclick="setRoute(3)" id = "routeThreeButton" class="button">Route 3</button>
       </div>
   	</div>
       
@@ -69,7 +72,7 @@
 
 <script>
     
-function toggleRoutes() {
+function toggleRoutesMenu() {
   var btns = document.getElementById("routeBtns");    
 
   if (btns.style.display !== "block") {
@@ -82,21 +85,20 @@ function toggleRoutes() {
 }
 
   
-function setRouteOne(){
+function setRoute(route){
   
-  
+  if (route === 1){
+    toggleRoutesMenu()
+  }
+  else if (route === 2){
+    toggleRoutesMenu()
+  }
+  else if (route === 3){
+    toggleRoutesMenu()
+  }
+    
 }
-  
-function setRouteTwo(){
-  
-  
-}
-  
-function setRouteThree(){
-  
-  
-}
-  
+    
   
 </script>
 
